@@ -116,13 +116,13 @@ namespace OpenXLSX
             // ===== If the argument is a bool, set the m_type attribute to Boolean.
             if constexpr (std::is_integral_v<T> && std::is_same_v<T, bool>) {
                 m_type  = XLValueType::Boolean;
-                m_value = value;
+                m_value.emplace<bool>(value);
             }
 
             // ===== If the argument is an integral type, set the m_type attribute to Integer.
             else if constexpr (std::is_integral_v<T> && !std::is_same_v<T, bool>) {
                 m_type  = XLValueType::Integer;
-                m_value = int64_t(value);
+                m_value.emplace<int64_t>(value);
             }
 
             // ===== If the argument is a string type (i.e. is constructable from *char),
@@ -147,7 +147,7 @@ namespace OpenXLSX
                 static_assert(std::is_floating_point_v<T>, "Invalid argument for constructing XLCellValue object");
                 if (std::isfinite(value)) {
                     m_type  = XLValueType::Float;
-                    m_value = double(value);
+                    m_value.emplace<double>(value);
                 }
                 else {
                     m_type = XLValueType::Error;
