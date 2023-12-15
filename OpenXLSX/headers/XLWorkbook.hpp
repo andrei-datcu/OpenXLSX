@@ -112,7 +112,7 @@ namespace OpenXLSX
          * @param other The XLWorkbook to be moved.
          * @note The move constructor has been explicitly defaulted.
          */
-        XLWorkbook(XLWorkbook&& other) = default;
+        XLWorkbook(XLWorkbook&& other) noexcept = default;
 
         /**
          * @brief Destructor

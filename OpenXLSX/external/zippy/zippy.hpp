@@ -29,8 +29,6 @@
 
 #include <nowide/cstdio.hpp>
 
-namespace
-{
     /* miniz.c 2.0.8 - public domain deflate/inflate, zlib-subset, ZIP reading/writing/appending, PNG writing
    See "unlicense" statement at the end of this file.
    Rich Geldreich <richgel99@gmail.com>, last updated Oct. 13, 2013
@@ -9680,7 +9678,6 @@ handle_failure:
 
 #endif /*#ifndef MINIZ_NO_ARCHIVE_APIS*/
 
-}    // namespace
 
 namespace Zippy
 {

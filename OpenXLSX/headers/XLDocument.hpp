@@ -138,7 +138,7 @@ namespace OpenXLSX
          * @brief
          * @param other
          */
-        XLDocument(XLDocument&& other) noexcept = default;
+        XLDocument(XLDocument&& other) = default;
 
         /**
          * @brief Destructor
